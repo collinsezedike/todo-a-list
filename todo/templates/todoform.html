@@ -1,0 +1,16 @@
+{% include "partials/header.html" %}
+  <div class="outer-section">
+    <form method="post" class="todo-form d-grid gap-2">
+        {% csrf_token %}
+        <div class="mb-3">
+          <h4><label for="taskInput" class="form-label">Task</label></h4>
+          <input type="text" class="form-control" id="taskInput" name="task" value="{{ task }}" placeholder="Pet my cat" required>
+        </div>
+        <div class="mb-3">
+          <h4><label for="deadlineInput" class="form-label">Deadline</label></h4>
+          <input type="date" class="form-control" id="deadlineInput" name="deadline" value="{{ deadline }}" required>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">{{ button_text }}</button>
+    </form>
+  </div>
+{% include "partials/footer.html" %}

@@ -1,0 +1,41 @@
+{% include "partials/header.html" %}
+    <div class="outer-section">
+    <section>
+        {% if todos %}
+            {% for deadline, todos in todos.items %}
+            <div class="mt-4">
+                <h3>{{ deadline }}</h3>
+                <ul class="list-group">
+                    {% for todo in todos %}
+                    <li class="list-group-item">
+                        <a href="/todo/{{ todo.id }}">
+                        <div class="list-text">
+                                {% if todo.is_complete %}
+                                <p class="complete-task">{{ todo.task | title }}</p> 
+                                {% else %}
+                                <p>{{ todo.task | title }}</p>
+                                {% endif %}
+                            </div>
+                            </a>
+                        <div class="list-icons">
+                            <a href="/edit/{{ todo.id }}"><i class="fa-solid fa-file-pen"></i></a>
+                            <a href="/delete/{{ todo.id }}"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="mt-5">
+            <h3>No todos yet. </h3>
+            <h3>Create one now!</h3>
+            <img class="mt-3" height="250rem" src="https://img.freepik.com/free-vector/empty-concept-illustration_114360-1233.jpg?w=740&t=st=1673020808~exp=1673021408~hmac=8aa87a3d8b38e21d4aeb3a0bd66ec2fda3131d0f48e0dc3bc556c23e73ff0196" alt="Empty Todo List">
+        </div>
+        {% endif %}
+        <div class="mt-5">
+            <a class="btn btn-lg btn-success" href="/add" role="button">Create Todo</a>
+        </div>
+        </section>
+    </div>
+{% include "partials/footer.html" %}

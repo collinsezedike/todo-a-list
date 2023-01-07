@@ -1,0 +1,26 @@
+{% include 'partials/header.html' %}
+    <div class="outer-section">
+        <div style="text-align: left;">
+            <a href="/">Go back</a>
+        </div>
+        <div class="mt-4">
+            {% if todo.is_complete %}
+            <h3 class="complete-task">{{ todo.task }}</h3>
+            <p class="complete-task">Deadline: {{ todo.deadline }} {% if todo.is_overdue %} <b>(overdue)</b> {% endif %}</p>
+            {% else %}
+            <h3>{{ todo.task }}</h3>
+            <p>Deadline: {{ todo.deadline }} {% if todo.is_overdue %} <b>(overdue)</b> {% endif %}</p>
+            {% endif %}
+        </div>
+        <div class="mt-4">
+            {% if todo.is_complete %}
+            <a href="/complete/{{ todo.id }}" value="{{ todo.id }}" class="check">Mark as incomplete</a> |
+            {% else %}
+            <a href="/complete/{{ todo.id }}" value="{{ todo.id }}" class="check">Mark as complete</a> |
+            {% endif %}
+            <a href="/edit/{{ todo.id }}">Edit</a> |
+            <a href="/delete/{{ todo.id }}">Delete</a>
+        </div>
+    </div>
+{% include 'partials/footer.html' %}
+

@@ -1,0 +1,48 @@
+a {
+    text-decoration: none;
+}
+.navbar {
+    padding: 1rem;
+}
+.outer-section {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    padding: 1rem;
+}
+@media (min-width:1025px)  { 
+    .outer-section {
+        width: 55%;
+    }
+}
+.todo-form {
+    margin: 4rem auto;
+    width: 95%;
+    text-align: left;
+}
+.todo-form input {
+    padding: 0.7rem;
+}
+.list-group {
+    text-align: left;
+    overflow: auto;
+}
+.list-group a {
+    color: inherit;
+}
+.list-group .list-text {
+    font-size: 1.2rem;
+    margin: 0.8rem auto 0;
+    float: left;
+}
+.list-group .list-icons {
+    padding: 1rem;
+    float: right;
+}
+.fa-solid {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+.complete-task {
+    text-decoration: line-through;
+}
