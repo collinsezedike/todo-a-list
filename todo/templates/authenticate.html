@@ -1,0 +1,23 @@
+{% include "partials/header.html" %}
+  <div class="outer-section">
+    <form method="post" class="my-form d-grid gap-2">
+        {% csrf_token %}
+        <div class="mb-3">
+          <h4><label for="usernameInput" class="form-label">Username</label></h4>
+          <input type="text" class="form-control" id="usernameInput" name="username" placeholder="@johndoe" required>
+          {% if messages %}
+            {% for message in messages %}
+            <div class="form-text" role="alert">
+              <p class="text-danger">{{ message }}</p>
+            </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="mb-3">
+          <h4><label for="emailInput" class="form-label">Email address</label></h4>
+          <input type="email" class="form-control" id="emailInput" name="email" placeholder="john@doe.com" required>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Continue</button>
+    </form>
+  </div>
+{% include "partials/footer.html" %}
