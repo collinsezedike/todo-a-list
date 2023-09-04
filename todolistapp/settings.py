@@ -44,8 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    "todo",
+    "todo",    
+    "table_prefix",
 ]
+
+# table prefix name
+DB_PREFIX = "todo_a_list_"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
