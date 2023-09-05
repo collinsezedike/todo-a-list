@@ -36,7 +36,7 @@ if not DEBUG:
 # Application definition
 
 INSTALLED_APPS = [
-    "django_db_prefix"
+    "django_db_prefix",
     
     "whitenoise.runserver_nostatic",
     'django.contrib.admin',
