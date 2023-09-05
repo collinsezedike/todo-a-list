@@ -36,6 +36,8 @@ if not DEBUG:
 # Application definition
 
 INSTALLED_APPS = [
+    "django_db_prefix"
+    
     "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,7 +47,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     "todo",    
-    "table_prefix",
 ]
 
 # table prefix name
